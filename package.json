@@ -11,11 +11,11 @@
     "start": "ember server",
     "test": "ember try:testall"
   },
-  "repository": "",
+  "repository": "https://github.com/lynnetye/ember-trix-editor.git",
   "engines": {
     "node": ">= 0.10.0"
   },
-  "author": "",
+  "author": "Lynne Tye and Channing Allen",
   "license": "MIT",
   "devDependencies": {
     "broccoli-asset-rev": "^2.1.2",
@@ -38,7 +38,12 @@
     "ember-try": "0.0.6"
   },
   "keywords": [
-    "ember-addon"
+    "ember-addon",
+    "ember-trix-editor",
+    "trix",
+    "rich",
+    "text",
+    "editor"
   ],
   "dependencies": {
     "ember-cli-babel": "^5.1.3"

@@ -1,0 +1,11 @@
+{{#unless attrs.excludeInput}}
+  <input id={{attrs.inputId}}
+         type="hidden"
+         name="content"
+         value={{attrs.value}}>
+{{/unless}}
+
+<trix-editor autofocus={{autofocusOn}}
+             class={{attrs.editorClass}}
+             input={{attrs.inputId}}
+             placeholder={{attrs.placeholder}}></trix-editor>

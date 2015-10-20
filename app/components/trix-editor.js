@@ -1,0 +1,1 @@
+export { default } from 'ember-trix-editor/components/trix-editor';
