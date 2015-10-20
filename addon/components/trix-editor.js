@@ -6,19 +6,13 @@ export default Ember.Component.extend({
 
   editor: null,
 
-  excludeInput: false,
-
   inputId: 'trix-editor-input-id',
 
   layout: layout,
 
-  placeholder: null,
-
-  value: null,
-
   _exposeEditor: Ember.on('didInsertElement', function () {
-    const trixEditorEl = Ember.$(this.get('element')).find('trix-editor')[0];
-    this.set('editor', trixEditorEl.editor);
+    // const trixEditorEl = Ember.$(this.get('element')).find('trix-editor')[0];
+    // this.set('editor', trixEditorEl.editor);
   }),
 
   _listenToTrixEditorActions: Ember.on('didInsertElement', function () {
