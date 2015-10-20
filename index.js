@@ -7,7 +7,7 @@ module.exports = {
   included: function (app) {
     this._super.included(app);
 
-    app.import(app.vendorDirectory + '/trix.js');
-    app.import(app.vendorDirectory + '/trix.css');
+    app.import('vendor/trix.js');
+    app.import('vendor/trix.css');
   }
 };
