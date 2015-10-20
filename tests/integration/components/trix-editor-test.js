@@ -5,22 +5,19 @@ moduleForComponent('trix-editor', 'Integration | Component | trix editor', {
   integration: true
 });
 
-test('it renders', function(assert) {
-  assert.expect(2);
+test('it renders', function (assert) {
+  assert.expect(5);
 
-  // Set any properties with this.set('myProperty', 'value');
-  // Handle any actions with this.on('myAction', function(val) { ... });
+  this.render(hbs``);
+
+  let $trixEditor = this.$().find('> div');
+  assert.strictEqual($trixEditor.length, 0);
 
   this.render(hbs`{{trix-editor}}`);
 
-  assert.equal(this.$().text().trim(), '');
-
-  // Template block usage:
-  this.render(hbs`
-    {{#trix-editor}}
-      template block text
-    {{/trix-editor}}
-  `);
-
-  assert.equal(this.$().text().trim(), 'template block text');
+  $trixEditor = this.$().find('> div');
+  assert.strictEqual($trixEditor.length, 1);
+  assert.strictEqual($trixEditor.find('> input').length, 1);
+  assert.strictEqual($trixEditor.find('> trix-toolbar').length, 1);
+  assert.strictEqual($trixEditor.find('> trix-editor').length, 1);
 });
