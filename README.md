@@ -1,7 +1,7 @@
 # ember-trix-editor
 
 Ember Trix Editor is an Ember addon that wraps Basecamp's [Trix editor](https://github.com/basecamp/trix)
-in an Ember component.[Visit our demo](https://lynnetye.github.io/ember-trix-editor/) to see it in action.
+in an Ember component. [Visit our demo](https://lynnetye.github.io/ember-trix-editor/) to see it in action.
 (Code for our demo is located in [tests/dummy/app](tests/dummy/app).)
 
 The component is consistent with Ember's data-down actions-up pattern
