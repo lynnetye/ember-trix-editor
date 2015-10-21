@@ -69,3 +69,33 @@ test('is focused based on autofocus attribute', function(assert) {
   $trixEditor = this.$().find('trix-editor');
   assert.ok($trixEditor.is(':focus'), 'editor focused when autofocus attr is a truthy string');
 });
+
+test('sets trix-editor\'s placeholder attribute to placeholder attr', function (assert) {
+  assert.expect(2);
+
+  clearAndRender.call(this, hbs`{{trix-editor}}`);
+  let $trixEditor = this.$().find('trix-editor');
+  assert.notOk($trixEditor.attr('placeholder'), 'placeholder empty if not set');
+
+  clearAndRender.call(this, hbs`{{trix-editor placeholder="test placeholder"}}`);
+  $trixEditor = this.$().find('trix-editor');
+  assert.strictEqual($trixEditor.attr('placeholder'),
+                     'test placeholder',
+                     'placeholder attribute determines placeholder text');
+});
+
+test('sets trix-editor\'s class attribute to editorClass attr', function (assert) {
+  assert.expect(3);
+
+  clearAndRender.call(this, hbs`{{trix-editor}}`);
+  let $trixEditor = this.$().find('trix-editor');
+  assert.notOk($trixEditor.attr('class'), 'class is empty by default');
+
+  clearAndRender.call(this, hbs`{{trix-editor editorClass="one"}}`);
+  $trixEditor = this.$().find('trix-editor');
+  assert.ok($trixEditor.hasClass('one'), 'accepts class name from editorClass');
+
+  clearAndRender.call(this, hbs`{{trix-editor editorClass="one two"}}`);
+  $trixEditor = this.$().find('trix-editor');
+  assert.ok($trixEditor.hasClass('one two'), 'accepts multiple class names from editorClass');
+});
