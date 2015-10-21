@@ -99,3 +99,30 @@ test('sets trix-editor\'s class attribute to editorClass attr', function (assert
   $trixEditor = this.$().find('trix-editor');
   assert.ok($trixEditor.hasClass('one two'), 'accepts multiple class names from editorClass');
 });
+
+test('sets trix-editor\'s event listeners on insert', function (assert) {
+  assert.expect(8);
+
+  clearAndRender.call(this, hbs`{{trix-editor}}`);
+  const trixEditorEl = this.$().find('trix-editor')[0];
+  const eventNames = Object.keys(jQuery._data(trixEditorEl, 'events'));
+  eventNames.forEach(eventName => {
+    assert.notEqual(eventNames.indexOf(eventName),
+                    -1,
+                    `${eventName} event is bound on insert`);
+  });
+});
+
+test('removes trix-editor\'s event listeners on destruction', function (assert) {
+  assert.expect(2);
+
+  clearAndRender.call(this, hbs`{{trix-editor}}`);
+  const $trixEditor = this.$().find('trix-editor');
+  const trixEditorEl = $trixEditor[0];
+  let eventsObject = jQuery._data(trixEditorEl, 'events');
+  assert.ok(eventsObject, 'events are bound initially on insert');
+
+  $('#ember-testing').html('');
+  eventsObject = jQuery._data(trixEditorEl, 'events');
+  assert.notOk(eventsObject, 'events are removed on destruction');
+});
