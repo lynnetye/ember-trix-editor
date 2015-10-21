@@ -4,7 +4,7 @@ Ember Trix Editor is an Ember addon that wraps Basecamp's [Trix editor](https://
 in an Ember component. [Visit our demo](https://lynnetye.github.io/ember-trix-editor/) to see it in action.
 (Code for our demo is located in [tests/dummy/app](tests/dummy/app).)
 
-The component is consistent with Ember's data-down actions-up pattern
+The component is consistent with Ember's data-down actions-up pattern:
 
 ###"Data down" to `{{trix-editor}}`
 * `attachmentsDisabled` (boolean; if truthy, calls preventDefault() on the trix-file-accept event)
@@ -38,7 +38,7 @@ actions: {
 ```
 
 ## Contributing to Trix
-This is the first time [Channing Allen] (https://twitter.com/ChanningAllen) and [Lynne Tye](https://twitter.com/lynnetye)
+This is the first time [Channing Allen](https://twitter.com/ChanningAllen) and [Lynne Tye](https://twitter.com/lynnetye)
 have contributed to an open-source project! We welcome others to send bug reports,
 make pull requests, or give us feedback.
 
