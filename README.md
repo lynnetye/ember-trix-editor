@@ -1,17 +1,17 @@
 # ember-trix-editor
 
-An Ember wrapper for the [Trix editor](https://github.com/basecamp/trix).
-You can also [visit our demo](https://lynnetye.github.io/ember-trix-editor/).
+Ember Trix Editor is an Ember addon that wraps Basecamp's [Trix editor](https://github.com/basecamp/trix)
+in an Ember component.[Visit our demo](https://lynnetye.github.io/ember-trix-editor/) to see it in action.
+(Code for our demo is located in [tests/dummy/app](tests/dummy/app).)
 
-This add-on is consistent with the Ember "actions up, data down" pattern, making
-the Trix editor available as a component in any Ember.js application.
+The component is consistent with Ember's data-down actions-up pattern
 
-###"Data down" to `{{trix-editor}}` (optional)
-* `attachmentsDisabled` (boolean)
-* `autofocus` (boolean)
-* `editorClass` (styling formatted content)
-* `placeholder`
-* `value` (to populate with stored content)
+###"Data down" to `{{trix-editor}}`
+* `attachmentsDisabled` (boolean; if truthy, calls preventDefault() on the trix-file-accept event)
+* `autofocus` (boolean; if truthy, adds the HTML autofocus attribute to the trix-editor tag)
+* `editorClass` (string; space-separated list of class names that will be passed to the class attribute of the `<trix-editor>` tag)
+* `placeholder` (string; text that will show up in the editor when it's empty)
+* `value` (string; text to pre-populate the trix-editor)
 
 ### "Actions up" from `{{trix-editor}}`
 * `trix-attachment-add`
@@ -22,8 +22,20 @@ the Trix editor available as a component in any Ember.js application.
 * `trix-focus`
 * `trix-initialize`
 * `trix-selection-change`
-* (all actions send jQuery event, from which the original event and editor
-property can be extracted)
+
+All actions send up a jQuery event, from which the original event and editor
+property can be extracted.
+```js
+actions: {
+  handleTrixAttachmentAdd(jqEvent) {
+    var attachment = jqEvent.originalEvent.attachment;
+    if (attachment.file) {
+      // update file to server
+      // call attachment.setAttributes();
+    }
+  }
+}
+```
 
 ## Contributing to Trix
 This is the first time [Channing Allen] (https://twitter.com/ChanningAllen) and [Lynne Tye](https://twitter.com/lynnetye)
