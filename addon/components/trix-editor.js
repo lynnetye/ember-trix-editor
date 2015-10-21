@@ -10,11 +10,6 @@ export default Ember.Component.extend({
 
   layout: layout,
 
-  _exposeEditor: Ember.on('didInsertElement', function () {
-    // const trixEditorEl = Ember.$(this.get('element')).find('trix-editor')[0];
-    // this.set('editor', trixEditorEl.editor);
-  }),
-
   _listenToTrixEditorActions: Ember.on('didInsertElement', function () {
     const $trixEditor = Ember.$(this.get('element')).find('trix-editor');
 
