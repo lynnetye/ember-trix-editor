@@ -10,7 +10,7 @@ function clearAndRender(template) {
   this.render(template);
 }
 
-test('it renders', function (assert) {
+test('renders', function (assert) {
   assert.expect(5);
 
   clearAndRender.call(this, hbs``);
@@ -25,7 +25,18 @@ test('it renders', function (assert) {
   assert.strictEqual($trixEditor.find('> trix-editor').length, 1);
 });
 
-test('component is focused based on autofocus attribute', function(assert) {
+test('sets correct HTML attributes to inputId attribute', function (assert) {
+  assert.expect(2);
+
+  clearAndRender.call(this, hbs`{{trix-editor inputId="attrs-id"}}`);
+  const inputIdAttribute = this.$().find('div > input').attr('id');
+  const customInputId = 'attrs-id';
+  assert.strictEqual(inputIdAttribute, customInputId);
+  const trixEditorInputAttribute = this.$().find('div > trix-editor').attr('input');
+  assert.strictEqual(trixEditorInputAttribute, customInputId);
+});
+
+test('is focused based on autofocus attribute', function(assert) {
   assert.expect(7);
 
   clearAndRender.call(this, hbs`{{trix-editor}}`);
