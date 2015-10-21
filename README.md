@@ -1,7 +1,7 @@
 # ember-trix-editor
 
 An Ember wrapper for the [Trix editor](https://github.com/basecamp/trix).
-You can also [visit our demo](lynnetye.github.io/ember-trix-editor/).
+You can also [visit our demo](https://lynnetye.github.io/ember-trix-editor/).
 
 This add-on is consistent with the Ember "actions up, data down" pattern, making
 the Trix editor available as a component in any Ember.js application.
