@@ -9,7 +9,7 @@ The component is consistent with Ember's data-down actions-up pattern:
 ### "Data down" to `{{trix-editor}}`
 * `attachmentsDisabled` (boolean; if truthy, calls preventDefault() on the trix-file-accept event)
 * `autofocus` (boolean; if truthy, adds the HTML autofocus attribute to the trix-editor tag)
-* `editorClass` (string; space-separated list of class names that will be passed to the class attribute of the `<trix-editor>` tag)
+* `editorClass` (string; space-separated list of class names that will be passed to the class attribute of the trix-editor tag)
 * `placeholder` (string; text that will show up in the editor when it's empty)
 * `value` (string; text to pre-populate the trix-editor)
 
