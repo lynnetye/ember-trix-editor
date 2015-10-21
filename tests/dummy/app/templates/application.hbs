@@ -1,3 +1,98 @@
-<h2 id="title">Welcome to Ember</h2>
+<h1 class="title">ember-trix-editor</h1>
 
-{{outlet}}
+<p class="description">
+  <a href="https://github.com/lynnetye/ember-trix-editor">Ember Trix Editor</a>
+  is an Ember addon that wraps<br>Basecamp's
+  <a href="https://github.com/basecamp/trix">Trix editor</a> in an Ember
+  component.
+</p>
+
+<p class="install-instructions">
+  <span>$</span> ember install ember-trix-editor {{testProperty}}
+</p>
+
+<section class="demo-content">
+  {{trix-editor class="trix-editor-wrapper"
+                editorClass="trix-editor"
+                trix-attachment-add=(action "handleTrixAction")
+                trix-attachment-remove=(action "handleTrixAction")
+                trix-blur=(action "handleTrixAction")
+                trix-change=(action "handleTrixAction")
+                trix-file-accept=(action "handleTrixAction")
+                trix-focus=(action "handleTrixAction")
+                trix-initialize=(action "handleTrixAction")
+                trix-selection-change=(action "handleTrixAction")}}
+
+  <ul class="events">
+    {{#each events as |event|}}
+      <li class="event">{{event.type}}</li>
+    {{/each}}
+  </ul>
+</section>
+
+<section class="demo-code">
+  <p class="demo-code__label">template</p>
+  <div id="gist27306614" class="gist">
+    <div class="gist-file">
+      <div class="gist-data">
+        <div class="js-gist-file-update-container js-task-list-container file-box">
+          <div id="file-asdf-hbs" class="file">
+            <div class="blob-wrapper data type-handlebars">
+              <table class="highlight tab-size js-file-line-container" data-tab-size="8">
+                <tbody>
+                  <tr>
+                    <td id="file-asdf-hbs-L1" class="blob-num js-line-number" data-line-number="1"></td>
+                    <td id="file-asdf-hbs-LC1" class="blob-code blob-code-inner js-file-line"><span class="pl-c1">\{{</span><span class="pl-v">trix-editor</span> class=<span class="pl-s"><span class="pl-pds">"</span>trix-editor-wrapper<span class="pl-pds">"</span></span></td>
+                  </tr>
+                  <tr>
+                    <td id="file-asdf-hbs-L2" class="blob-num js-line-number" data-line-number="2"></td>
+                    <td id="file-asdf-hbs-LC2" class="blob-code blob-code-inner js-file-line">              editorClass=<span class="pl-s"><span class="pl-pds">"</span>trix-editor<span class="pl-pds">"</span></span></td>
+                  </tr>
+                  <tr>
+                    <td id="file-asdf-hbs-L3" class="blob-num js-line-number" data-line-number="3"></td>
+                    <td id="file-asdf-hbs-LC3" class="blob-code blob-code-inner js-file-line">              trix-attachment-add=(action <span class="pl-s"><span class="pl-pds">"</span>handleTrixAction<span class="pl-pds">"</span></span>)</td>
+                  </tr>
+                  <tr>
+                    <td id="file-asdf-hbs-L4" class="blob-num js-line-number" data-line-number="4"></td>
+                    <td id="file-asdf-hbs-LC4" class="blob-code blob-code-inner js-file-line">              trix-attachment-remove=(action <span class="pl-s"><span class="pl-pds">"</span>handleTrixAction<span class="pl-pds">"</span></span>)</td>
+                  </tr>
+                  <tr>
+                    <td id="file-asdf-hbs-L5" class="blob-num js-line-number" data-line-number="5"></td>
+                    <td id="file-asdf-hbs-LC5" class="blob-code blob-code-inner js-file-line">              trix-blur=(action <span class="pl-s"><span class="pl-pds">"</span>handleTrixAction<span class="pl-pds">"</span></span>)</td>
+                  </tr>
+                  <tr>
+                    <td id="file-asdf-hbs-L6" class="blob-num js-line-number" data-line-number="6"></td>
+                    <td id="file-asdf-hbs-LC6" class="blob-code blob-code-inner js-file-line">              trix-change=(action <span class="pl-s"><span class="pl-pds">"</span>handleTrixAction<span class="pl-pds">"</span></span>)</td>
+                  </tr>
+                  <tr>
+                    <td id="file-asdf-hbs-L7" class="blob-num js-line-number" data-line-number="7"></td>
+                    <td id="file-asdf-hbs-LC7" class="blob-code blob-code-inner js-file-line">              trix-file-accept=(action <span class="pl-s"><span class="pl-pds">"</span>handleTrixAction<span class="pl-pds">"</span></span>)</td>
+                  </tr>
+                  <tr>
+                    <td id="file-asdf-hbs-L8" class="blob-num js-line-number" data-line-number="8"></td>
+                    <td id="file-asdf-hbs-LC8" class="blob-code blob-code-inner js-file-line">              trix-focus=(action <span class="pl-s"><span class="pl-pds">"</span>handleTrixAction<span class="pl-pds">"</span></span>)</td>
+                  </tr>
+                  <tr>
+                    <td id="file-asdf-hbs-L9" class="blob-num js-line-number" data-line-number="9"></td>
+                    <td id="file-asdf-hbs-LC9" class="blob-code blob-code-inner js-file-line">              trix-initialize=(action <span class="pl-s"><span class="pl-pds">"</span>handleTrixAction<span class="pl-pds">"</span></span>)</td>
+                  </tr>
+                  <tr>
+                    <td id="file-asdf-hbs-L10" class="blob-num js-line-number" data-line-number="10"></td>
+                    <td id="file-asdf-hbs-LC10" class="blob-code blob-code-inner js-file-line">              trix-selection-change=(action <span class="pl-s"><span class="pl-pds">"</span>handleTrixAction<span class="pl-pds">"</span></span>)<span class="pl-c1">}}</span></td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <p>
+    Created by <a href="https://twitter.com/channingallen" target="_blank">Channing Allen</a>
+    and <a href="https://twitter.com/lynnetye" target="_blank">Lynne Tye</a>.
+  </p>
+</footer>

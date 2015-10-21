@@ -1,0 +1,154 @@
+@import url(https://fonts.googleapis.com/css?family=Open+Sans:400,700,600);
+@import url(https://fonts.googleapis.com/css?family=Inconsolata:400,700);
+
+@import "reset";
+
+$background-color--readable: white;
+$font-family: 'Open Sans', sans-serif;
+$font-family--monospace: Inconsolata, sans-serif;
+$color--accent: hsl(340, 100%, 50%);
+$color--highlight: hsl(200, 100%, 50%);
+
+@keyframes highlightNewEvent {
+  0% {
+    background-color: $color--accent;
+    color: white;
+  }
+
+  30% {
+    background-color: $color--accent;
+    color: white;
+  }
+
+  100% {
+    background-color: $background-color--readable;
+    color: black;
+  }
+}
+
+html {
+  background-image: url("/geometry2.png");
+  font-family: $font-family;
+  font-size: 16px;
+  text-align: center;
+}
+
+body > div {
+  padding: 30px 0 90px;
+}
+
+.title {
+  color: $color--accent;
+  font-size: 40px;
+  font-weight: bold;
+}
+
+.description {
+  margin-top: 30px;
+}
+
+.description,
+footer {
+  line-height: 1.5em;
+
+  a,
+  a:active,
+  a:visited {
+    color: $color--accent;
+    font-weight: bold;
+  }
+
+  a:hover {
+    color: $color--highlight;
+  }
+}
+
+.install-instructions {
+  background-color: hsl(0, 0%, 30%);
+  border-radius: 4px;
+  color: white;
+  display: inline-block;
+  font-family: $font-family--monospace;
+  font-weight: bold;
+  margin-top: 30px;
+  padding: 12px 20px;
+
+  span {
+    color: $color--accent;
+  }
+}
+
+.demo-content {
+  display: flex;
+  justify-content: center;
+  margin: 50px auto 0;
+}
+
+.trix-editor-wrapper {
+  margin-right: 12px;
+  text-align: left;
+  width: 520px;
+}
+
+trix-toolbar .button_group button.active,
+trix-toolbar .button_group input[type=button].active {
+  background-color: $color--accent;
+  color: white;
+}
+
+.trix-editor {
+  background-color: $background-color--readable;
+  font-family: $font-family;
+  min-height: 350px;
+}
+
+.events {
+  border: 2px solid hsl(0, 0%, 85%);
+  border-radius: 4px;
+  font-size: 13px;
+  max-height: 387px;
+  overflow: auto;
+  padding: 6px;
+  text-align: left;
+  width: 200px;
+}
+
+.event {
+  animation: highlightNewEvent 750ms forwards;
+  background-color: $background-color--readable;
+  border-radius: 3px;
+  padding: 6px 12px;
+
+  &:not(:last-child) {
+    margin-bottom: 3px;
+  }
+}
+
+.demo-code {
+  margin: 40px auto 0;
+  text-align: left;
+  width: 730px;
+
+  .gist .pl-v {
+    color: $color--accent;
+  }
+
+  .gist .pl-s {
+    color: $color--highlight;
+  }
+}
+
+.demo-code__label {
+  background-color: white;
+  border-color: hsl(0, 0%, 86%);
+  border-style: solid;
+  border-width: 1px 1px 0;
+  border-top-left-radius: 3px;
+  border-top-right-radius: 3px;
+  display: inline-block;
+  padding: 6px 10px;
+}
+
+footer {
+  margin-top: 60px;
+}
