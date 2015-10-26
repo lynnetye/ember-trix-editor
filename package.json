@@ -1,7 +1,7 @@
 {
   "name": "ember-trix-editor",
   "version": "1.0.3",
-  "description": "The default blueprint for ember-cli addons.",
+  "description": "An Ember.js addon that wraps the Trix editor in a component",
   "directories": {
     "doc": "doc",
     "test": "tests"
@@ -11,7 +11,7 @@
     "start": "ember server",
     "test": "ember try:testall"
   },
-  "repository": "https://github.com/lynnetye/ember-trix-editor.git",
+  "repository": "https://github.com/lynnetye/ember-trix-editor",
   "engines": {
     "node": ">= 0.10.0"
   },
@@ -50,6 +50,7 @@
     "ember-cli-htmlbars": "0.7.9"
   },
   "ember-addon": {
-    "configPath": "tests/dummy/config"
+    "configPath": "tests/dummy/config",
+    "demoURL": "https://lynnetye.github.io/ember-trix-editor/"
   }
 }
