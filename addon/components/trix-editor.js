@@ -6,7 +6,9 @@ export default Ember.Component.extend({
 
   editor: null,
 
-  inputId: 'trix-editor-input-id',
+  inputId: Ember.computed('elementId',function() {
+    return `trix-editor-${this.get('elementId')}`;
+  }),
 
   layout: layout,
 
